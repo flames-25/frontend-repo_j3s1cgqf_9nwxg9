@@ -1,28 +1,40 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gray-950 text-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-gray-950/70 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#home" className="text-lg font-semibold tracking-tight">Harsh Singh</a>
+          <nav className="hidden gap-6 text-sm text-gray-300 sm:flex">
+            <a href="#skills" className="hover:text-white">Skills</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
+          <a href="#contact" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Hire Me</a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 bg-gray-950 py-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 text-sm text-gray-400">
+          <p>© 2024 • Built by Harsh Singh</p>
+          <a href="#home" className="hover:text-white">Back to top ↑</a>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
